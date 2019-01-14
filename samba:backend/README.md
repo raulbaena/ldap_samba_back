@@ -2,7 +2,7 @@
 
 ## @edt ASIX M06-ASO Curs 2018-2019
 
-Fitxers necesaris per la cració del servidor SAMBA
+Fitxers necesaris per la cració del servidor SAMBA amb ldap backend
 
 ## Fitxers de configuració
 
@@ -32,7 +32,7 @@ usuaris_samba.sh
 
 # Execució de la imatge 
 
-docker run --privileged --rm --name smb -h smb --network sambanet -it samba:server
+docker run --privileged --rm --name smb -h smb --network sambanet -it raulbaena/samba:backend
 
 ## Configuració smb.conf
 
@@ -60,10 +60,7 @@ docker run --privileged --rm --name smb -h smb --network sambanet -it samba:serv
         writable = yes
 ;       valid users = %S
 ;       valid users = MYDOMAIN\%S
-´´´
-
-
-
+```
 
 ## Instalem el paquet smbldap-tools per configurar els fitxers de smbldap-tools /etc/smbldap-tools/smbldap.conf i smbldap_bind.conf. establint els noms del DIT i els passwords apropiats.
 
@@ -83,11 +80,12 @@ slaveDN="cn=Manager,dc=edt,dc=org"
 slavePw="secret"
 masterDN="cn=Manager,dc=edt,dc=org"
 masterPw="secret"
-~
+`´´
+
 ```
 
 ## Comprovament de la configuració
-
+```
 [root@smb docker]# net getlocalsid
 SID for domain SMB is: S-1-5-21-3476053131-24837329-2394870572
 [root@smb docker]# 
