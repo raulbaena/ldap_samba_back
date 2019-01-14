@@ -13,10 +13,11 @@ Hem de configurar l'arxiu pam_mount i afegir una line que permeti muntar sistema
 />
 
 ## Exemple del funcionament
-
+```
 [root@host docker]# su - pere
 Creating directory '/tmp/home/pere'.
 reenter password for pam_mount:
 [pere@host ~]$ mount -t cifs
 //172.19.0.3/pere on /tmp/home/pere/pere type cifs (rw,relatime,vers=default,cache=strict,username=pere,domain=,uid=5001,forceuid,gid=100,forcegid,addr=172.19.0.3,file_mode=0755,dir_mode=0755,soft,nounix,serverino,mapposix,rsize=1048576,wsize=1048576,echo_interval=60,actimeo=1)
 
+```
