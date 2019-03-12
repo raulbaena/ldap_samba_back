@@ -90,7 +90,7 @@ marta:5003:Marta Mas
 user10:7010:user10
 vladimir:11011:vladimir putin
 
-
+[root@smb docker]#  ldapsearch -x -LLL
 dn: cn=Domain Computers,ou=grups,dc=edt,dc=org
 objectClass: top
 objectClass: posixGroup
