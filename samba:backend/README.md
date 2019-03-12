@@ -32,7 +32,7 @@ usuaris_samba.sh
 
 # Execució de la imatge 
 
-docker run --privileged --rm --name smb -h smb --network sambanet -it raulbaena/samba:backend
+docker run --privileged --rm --name smb -h smb --network sambanet -it raulbaena/backend:samba
 
 
 #By Raul Baena Nocea

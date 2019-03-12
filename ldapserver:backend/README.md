@@ -4,13 +4,13 @@
 
 ## Maquina
 
-raulbaena/ldapserver:samba --> Maquina servidor ldap amb base de dades dc=edt,dc=org
+raulbaena/backend:ldap --> Maquina servidor ldap amb base de dades dc=edt,dc=org
 
 ldapserver 2018-2019 edt.org cn
 
 Comandes per execució
 
- * **server** docker run --rm --network sambanet -h ldap --name ldap -p 389:389 -d ldapserver:samba
+ * **server** docker run --rm --network sambanet -h ldap --name ldap -p 389:389 -d raulbaena/backend:ldap
 
 
 ## Hem de implementar l'equema samba al servidor ldap per poder fer el populate y poder 
