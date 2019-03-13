@@ -16,11 +16,11 @@ raulbaena/backend:host --> Host amb connexío al servidor ldap. Utilitzarem aque
 
 docker network create sambanet
 
-docker run --privileged --rm -h host --name host --network sambanet -it raulbaena/backend:host
+docker run --rm --network sambanet -h ldap --name ldap -p 389:389 -d raulbaena/backend:ldap
 
 docker run --privileged --rm --name smb -h smb --network sambanet -it raulbaena/backend:samba
 
-docker run --rm --network sambanet -h ldap --name ldap -p 389:389 -d raulbaena/backend:ldap
+docker run --privileged --rm -h host --name host --network sambanet -it raulbaena/backend:host
 
 
 ## Configuració smb.conf
